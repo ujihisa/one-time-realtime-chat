@@ -8,5 +8,5 @@ App.room = App.cable.subscriptions.create "RoomChannel",
   received: (data) ->
     console.log(data)
 
-  speak: (m) ->
-    @perform 'speak', m: m
+  speak: (name, body) ->
+    @perform 'speak', message: {name: name, body: body}

@@ -9,6 +9,13 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    ActionCable.server.broadcast 'room_channel', m: data['m']
+    m = Message.create!(with_remote_addr(data['message']))
+    ActionCable.server.broadcast 'room_channel', m: m
+  end
+
+  private
+
+  def with_remote_addr(hash)
+    hash.merge({ip: connection.env['REMOTE_ADDR']})
   end
 end
