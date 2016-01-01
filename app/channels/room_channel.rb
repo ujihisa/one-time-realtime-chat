@@ -9,8 +9,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    m = Message.create!(with_remote_addr(data['message']))
-    ActionCable.server.broadcast 'room_channel', m: m
+    Message.create!(with_remote_addr(data['message']))
   end
 
   private
