@@ -21,3 +21,11 @@ iexe rails server
 ```
 
 If the rake/rails processes are hang, just `kill` the spring process automatically running background.
+
+
+### References
+
+* https://www.youtube.com/watch?v=n0WUjGkDFS0&feature=youtu.be
+* http://qiita.com/jnchito/items/aec75fab42804287d71b
+    * Japanese version of the DHH video
+    * Also a tip for heroku (but this time I didn't use.)
