@@ -22,7 +22,4 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
-  database: realtime_chat_production
-  pool: 5
-  timeout: 5000
+  database: db/production.sqlite3
