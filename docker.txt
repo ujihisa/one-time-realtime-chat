@@ -1,0 +1,7 @@
+docker build -t one-time-realtime-chat .
+
+docker run --name one-time-realtime-chat --rm -p 3000:3000 -p 28080:28080 -it one-time-realtime-chat bash
+
+cd one-time-realtime-chat && rails server -b 0.0.0.0
+
+docker run -p 6379:6379 redis
